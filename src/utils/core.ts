@@ -8,6 +8,11 @@ export const db = new pg.Pool({
 	allowExitOnIdle: true,
 })
 
+export async function sqlMath(query: string) {
+	return (await db.query(`SELECT CAST(${query} AS REAL) AS result`)).rows[0]
+		.result as number
+}
+
 export async function sleep(ms: number) {
 	return new Promise((resolve) => {
 		setTimeout(resolve, ms)
