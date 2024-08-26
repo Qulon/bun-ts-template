@@ -1,7 +1,7 @@
 https://marketplace.visualstudio.com/items?itemName=biomejs.biome
 
 ```
-rm -rf .git && mv env .env && npm i
+rm -rf .git && mv env .env && bun i
 ```
 
 settings.json
