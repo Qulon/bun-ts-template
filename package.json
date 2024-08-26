@@ -1,0 +1,38 @@
+{
+	"name": "backend",
+	"module": "app.ts",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "",
+	"main": ".build/app.js",
+	"author": "",
+	"license": "ISC",
+	"scripts": {
+		"start": "nodemon -d 0.5 -w .env -w src -x bun run src/app.ts",
+		"start:prod": "bun run src/app.ts",
+		"typecheck": "tsc --noEmit",
+		"typegen:pg": "env-cmd pgtyped -w -c pgtyped.json",
+		"lint": "npx @biomejs/biome check src",
+		"lint:fix": "npx @biomejs/biome check --apply src",
+		"update": "bun update",
+		"update:latest": "bun update --latest"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@pgtyped/cli": "^2.3.0",
+		"@pgtyped/query": "^2.3.0",
+		"@total-typescript/ts-reset": "^0.5.1",
+		"@types/bun": "^1.1.6",
+		"@types/pg": "^8.11.6",
+		"env-cmd": "^10.1.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5.5.4"
+	},
+	"dependencies": {
+		"@mrspartak/config": "^1.0.0",
+		"@onmoon/pg-tx": "^1.0.8",
+		"pg": "^8.12.0",
+		"zod": "^3.23.8"
+	}
+}

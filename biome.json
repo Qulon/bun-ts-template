@@ -1,0 +1,38 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"all": true,
+			"suspicious": {
+				"noConsoleLog": "off"
+			},
+			"style": {
+				"noNonNullAssertion": "off",
+				"useNamingConvention": "off",
+				"noDefaultExport": "off",
+				"noNamespaceImport": "off"
+			},
+			"nursery": {},
+			"complexity": {
+				"noVoid": "off",
+				"useSimplifiedLogicExpression": "off"
+			},
+			"correctness": {
+				"useHookAtTopLevel": "off"
+			}
+		}
+	},
+	"files": {
+		"ignore": ["*.queries.ts"]
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded",
+			"quoteStyle": "single"
+		}
+	}
+}
