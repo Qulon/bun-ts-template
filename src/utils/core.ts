@@ -9,8 +9,8 @@ export const db = new pg.Pool({
 })
 
 export async function sqlMath(query: string) {
-	return (await db.query(`SELECT CAST(${query} AS REAL) AS result`)).rows[0]
-		.result as number
+	return (await db.query(`SELECT CAST(${query} AS double precision) AS result`))
+		.rows[0].result as number
 }
 
 export async function sleep(ms: number) {
